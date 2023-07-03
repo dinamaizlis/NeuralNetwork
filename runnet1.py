@@ -48,7 +48,7 @@ if __name__ == '__main__':
     if len(args) > 0:
         Went0File = args[0]
         if len(args) > 1:
-            Went0File = args[1]
+            Datafile = args[1]
     else:
         Went0File="wnet0.txt"
         Datafile="test"

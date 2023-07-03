@@ -8,7 +8,7 @@ HIDDEN_SIZE = 10
 OUTPUT_SIZE = 1
 
 #Genetic algorithm
-GENERATIONS = 80
+GENERATIONS = 60
 POPULATION_SIZE = 120
 REPLACEMENT_SIZE = int(POPULATION_SIZE * 0.4)
 
@@ -35,7 +35,7 @@ class GeneticAlgorithm:
     def __init__(self, TestData, TrainData):
         self.TrainData = TrainData
         self.TestData = TestData
-        self.Mutation = 0.2
+        self.Mutation = 0.3
         self.Network = Network()
 
     # function calculates the fitness score for a given set of weights by evaluating the neural network's predictions
@@ -124,11 +124,12 @@ class GeneticAlgorithm:
             print("Generation -> ",generation, "|  Best Fitness -> ",BestFitnessScores)
 
             FitnessCount = FitnessCount + 1 if BestFitnessScores == BestFitness else 0
-            if FitnessCount ==0:
-                self.Mutation = 0.2
-                BestFitness = BestFitnessScores
-            if FitnessCount > 12:
-                self.Mutation = 0.9
+            #if FitnessCount ==0:
+            #    self.Mutation = 0.2
+            #    BestFitness = BestFitnessScores
+            if FitnessCount > 6:
+                #self.Mutation = 0.9
+                break
 
         return FittestW
 
