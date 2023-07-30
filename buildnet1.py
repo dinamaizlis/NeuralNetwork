@@ -176,8 +176,8 @@ if __name__ == '__main__':
             TestData = args[1]
     else:
         SplitTextFile("nn1.txt",14000,"nn1Train.txt","nn1Test.txt")
-        TrainData =ReadData("nn1train.txt")
-        TestData = ReadData("nn1Test.txt")
+    TrainData =ReadData("nn1train.txt")
+    TestData = ReadData("nn1Test.txt")
     GeneticAlgorithm = GeneticAlgorithm(TestData, TrainData)
     Weigths = GeneticAlgorithm.run()
     #save in file
